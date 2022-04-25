@@ -34,7 +34,7 @@ export default class ClientPage extends Component {
         return res;
       });
 
-    this.setState({ memberInfo: memberInfo[0] });
+    this.setState({ memberInfo: memberInfo[memberInfo.length - 1] });
     document.body.style.backgroundColor = "#AA0000";
   }
 
