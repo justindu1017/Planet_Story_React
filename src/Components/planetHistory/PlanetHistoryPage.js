@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import BadgeEL from "./BadgeEL";
-import NoBadgeEL from "./NoBadgeEL";
+import BadgeEL from "./PlanetEL";
+import NoBadgeEL from "./NoPlanetEL";
+import PlanetModal from "./PlanetModal";
 
-export default class BadgePage extends Component {
+export default class PlanetHistoryPage extends Component {
   state = {
     memberInfo: [],
   };
@@ -23,7 +24,9 @@ export default class BadgePage extends Component {
       <div className="d-flex flex-wrap container">
         {this.state.memberInfo.map((el) => {
           if (el) {
-            return <BadgeEL img={el.storyTemplate.badge} />;
+            return (
+              <BadgeEL img={el.storyTemplate.badge} id={el.storyTemplate._id} />
+            );
           } else {
             return <NoBadgeEL />;
           }

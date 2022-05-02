@@ -28,13 +28,13 @@ export default class ClientPage extends Component {
   };
 
   async componentDidMount() {
-    const memberInfo = await this.doFetch("62547ca218e61b19371368f8")
+    const memberInfo = await this.doFetch("626ec648da9cce362c2021d9")
       .then((res) => res.json())
       .then((res) => {
         return res;
       });
 
-    this.setState({ memberInfo: memberInfo[memberInfo.length - 1] });
+    this.setState({ memberInfo: memberInfo[0] });
     document.body.style.backgroundColor = "#AA0000";
   }
 
@@ -48,7 +48,7 @@ export default class ClientPage extends Component {
 
   doFetch = (memberID) => {
     // fetch from server by memberID
-    return fetch("/api/storyProgress/getByMember", {
+    return fetch("/api/storyProgress/getActiveStory", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
