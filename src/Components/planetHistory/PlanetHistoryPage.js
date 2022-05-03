@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import BadgeEL from "./PlanetEL";
 import NoBadgeEL from "./NoPlanetEL";
-import PlanetModal from "./PlanetModal";
 
 export default class PlanetHistoryPage extends Component {
   state = {

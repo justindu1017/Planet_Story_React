@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import "../../style/badge.css";
-import PlanetModal from "./PlanetModal";
 
 export default class PlanetEL extends Component {
-  state = {
-    openModal: false,
-  };
   render() {
     return (
       <div
