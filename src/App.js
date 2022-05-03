@@ -16,6 +16,7 @@ export default class App extends Component {
           <Route path="/badge" exact component={BadgePage} />
           <Route path="/planetHistory" exact component={PlanetHistoryPage} />
           <Route path="/BE_Edit" exact component={EditPage} />
+          <Route path="/:id" exact component={ClientPage} />
         </Switch>
       </Router>
     );

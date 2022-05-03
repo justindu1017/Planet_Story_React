@@ -16,7 +16,6 @@ export default class ClientPage extends Component {
         task: "",
         taskStory: "",
         badge: "",
-        taskMessages: [],
       },
       member: {
         _id: "",
@@ -29,36 +28,20 @@ export default class ClientPage extends Component {
   };
 
   async componentDidMount() {
-    const { id } = this.props.match.params;
+    const memberInfo = await this.doFetch("626ec648da9cce362c2021d9")
+      .then((res) => res.json())
+      .then((res) => {
+        return res;
+      });
 
-    const memberInfo = id
-      ? await this.doFetchStoryID(id)
-          .then((res) => res.json())
-          .then((res) => {
-            return res;
-          })
-      : await this.doFetch("6271349da3e29d4bc8f8bd6e")
-          .then((res) => res.json())
-          .then((res) => {
-            return res;
-          });
-    this.setState({ memberInfo: memberInfo[0] ? memberInfo[0] : memberInfo });
-
+    this.setState({ memberInfo: memberInfo[0] });
     document.body.style.backgroundColor = "#AA0000";
   }
 
   render() {
     return (
       <div className="App container">
-        <MemberPage
-          storyProgressID={this.state.memberInfo._id}
-          member={this.state.memberInfo.member}
-          storyContent={
-            this.state.memberInfo.storyTemplate
-              ? this.state.memberInfo.storyTemplate
-              : this.state.memberInfo
-          }
-        />
+        <MemberPage storyContent={this.state.memberInfo.storyTemplate} />
       </div>
     );
   }
@@ -71,16 +54,6 @@ export default class ClientPage extends Component {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ member: memberID }),
-    });
-  };
-
-  doFetchStoryID = (storyID) => {
-    // fetch from server by memberID
-    return fetch("/api/storyTemplate/" + storyID, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
     });
   };
 }
