@@ -76,7 +76,7 @@ export default class ClientPage extends Component {
 
   doFetchStoryID = (storyID) => {
     // fetch from server by memberID
-    return fetch("/api/storyTemplate/" + storyID, {
+    return fetch("/api/storyProgress/" + storyID, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
