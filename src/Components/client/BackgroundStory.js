@@ -5,7 +5,7 @@ import TextBox from "./TextBox";
 export default class BackgroundStory extends Component {
   render() {
     return (
-      <div className="d-flex w-full">
+      <div className="d-flex w-full my-2">
         <div className="w-50">
           <TextBox
             storyContent={this.props.storyContent.background}

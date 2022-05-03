@@ -5,7 +5,7 @@ import TextBox from "./TextBox";
 export default class TaskSection extends Component {
   render() {
     return (
-      <div className="d-flex">
+      <div className="d-flex my-2">
         <div className="w-50">
           <TextBox
             storyContent={this.props.storyContent.taskStory}

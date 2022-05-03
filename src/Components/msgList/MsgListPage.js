@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import MsgEL from "./MsgEL";
 
-export default class MsgListEL extends Component {
+export default class MsgListPage extends Component {
   state = {
     storyInfo: {
       _id: "",
@@ -12,7 +13,7 @@ export default class MsgListEL extends Component {
       task: "",
       taskStory: "",
       badge: "",
-      taskMessages: [],
+      taskMessages: [""],
       __v: 0,
     },
   };
@@ -24,17 +25,23 @@ export default class MsgListEL extends Component {
       .then((res) => {
         return res;
       });
-
-    this.setState(storyInfo);
+    this.setState({ storyInfo: storyInfo });
   }
 
   render() {
-    return <div>MsgListEL</div>;
+    return (
+      <div className="container">
+        {this.state.storyInfo.taskMessages.map((el) => {
+          console.log(el);
+          return <MsgEL msgObj={el} />;
+        })}
+      </div>
+    );
   }
 
   doFetchStoryID = (storyID) => {
     // fetch from server by memberID
-    return fetch("/api/storyTemplate/" + storyID, {
+    return fetch("/api/storyProgress/" + storyID, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

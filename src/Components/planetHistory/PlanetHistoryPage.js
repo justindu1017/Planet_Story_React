@@ -13,6 +13,7 @@ export default class PlanetHistoryPage extends Component {
       .then((res) => {
         return res;
       });
+    console.log(memberInfo);
     memberInfo = this.resize(memberInfo, 12);
     this.setState({ memberInfo: memberInfo });
     document.body.style.backgroundColor = "#AA0000";
@@ -25,7 +26,7 @@ export default class PlanetHistoryPage extends Component {
         toPlanet.href = recipient;
 
         var toMsg = this.querySelector("#toMsg");
-        toMsg.href = recipient;
+        toMsg.href = "/msg/" + recipient;
       });
   }
 
@@ -34,12 +35,7 @@ export default class PlanetHistoryPage extends Component {
       <div className="d-flex flex-wrap container">
         {this.state.memberInfo.map((el) => {
           if (el) {
-            return (
-              <PlanetEL
-                img={el.storyTemplate.badge}
-                id={el.storyTemplate._id}
-              />
-            );
+            return <PlanetEL img={el.badge} id={el._id} />;
           } else {
             return <NoPlanetEL />;
           }

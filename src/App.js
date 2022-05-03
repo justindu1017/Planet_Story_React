@@ -7,6 +7,7 @@ import ClientPage from "./Components/client/ClientPage";
 import BadgePage from "./Components/badge/BadgePage";
 import EditPage from "./Components/server/EditPage";
 import PlanetHistoryPage from "./Components/planetHistory/PlanetHistoryPage";
+import MsgListPage from "./Components/msgList/MsgListPage";
 export default class App extends Component {
   render() {
     return (
@@ -16,6 +17,7 @@ export default class App extends Component {
           <Route path="/badge" exact component={BadgePage} />
           <Route path="/planetHistory" exact component={PlanetHistoryPage} />
           <Route path="/BE_Edit" exact component={EditPage} />
+          <Route path="/msg/:id" exact component={MsgListPage} />
           <Route path="/:id" exact component={ClientPage} />
         </Switch>
       </Router>

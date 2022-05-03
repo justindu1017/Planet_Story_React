@@ -4,7 +4,7 @@ export default class TitleSec extends Component {
   render() {
     return (
       <div className="d-flex justify-content-between">
-        <h3>{this.props.storyContent.name}</h3>
+        <h1>{this.props.storyContent.name}</h1>
         <div className="d-flex">
           <div className="d-flex align-items-center">探索進度:</div>
           <div className="d-flex align-items-center">
