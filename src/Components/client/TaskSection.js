@@ -12,7 +12,7 @@ export default class TaskSection extends Component {
             handleExpand={this.handleExpand}
           />
         </div>
-        <div className="w-50">
+        <div className="w-50 d-flex">
           <Picture />
         </div>
       </div>

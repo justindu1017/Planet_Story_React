@@ -13,7 +13,7 @@ export default class BackgroundStory extends Component {
           />
         </div>
 
-        <div className="w-50">
+        <div className="w-50 d-flex">
           <Picture picSrc={this.props.picSrc} />
         </div>
       </div>

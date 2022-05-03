@@ -10,14 +10,17 @@ export default class MemberPage extends Component {
     return (
       <div>
         <TitleSec storyContent={this.props.storyContent} />
-        <BackgroundStory storyContent={this.props.storyContent} />
-        <StorySubs StorySubs={this.createStoryRandomArr()} />
-        <TaskSection storyContent={this.props.storyContent} />
-        <Msg
-          storyProgressID={this.props.storyProgressID}
-          member={this.props.member}
-          storyContent={this.props.storyContent}
-        />
+
+        <div className="container">
+          <BackgroundStory storyContent={this.props.storyContent} />
+          <StorySubs StorySubs={this.createStoryRandomArr()} />
+          <TaskSection storyContent={this.props.storyContent} />
+          <Msg
+            storyProgressID={this.props.storyProgressID}
+            member={this.props.member}
+            storyContent={this.props.storyContent}
+          />
+        </div>
       </div>
     );
   }

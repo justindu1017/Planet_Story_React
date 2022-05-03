@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import "../../style/reset.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.css";
 import MemberPage from "./MemberPage";
+import bg from "..\\..\\pic\\Galaxy.jpg";
 
 export default class ClientPage extends Component {
   state = {
@@ -44,12 +45,12 @@ export default class ClientPage extends Component {
           });
     this.setState({ memberInfo: memberInfo[0] ? memberInfo[0] : memberInfo });
 
-    document.body.style.backgroundColor = "#AA0000";
+    document.body.style.backgroundImage = "url(" + bg + ")";
   }
 
   render() {
     return (
-      <div className="App container">
+      <div className="App ">
         <MemberPage
           storyProgressID={this.state.memberInfo._id}
           member={this.state.memberInfo.member}
