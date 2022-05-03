@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BadgeEL from "./BadgeEL";
 import NoBadgeEL from "./NoBadgeEL";
+import bg from "..\\..\\pic\\Galaxy.jpg";
 
 export default class BadgePage extends Component {
   state = {
@@ -15,7 +16,7 @@ export default class BadgePage extends Component {
       });
     memberInfo = this.resize(memberInfo, 12);
     this.setState({ memberInfo: memberInfo });
-    document.body.style.backgroundColor = "#AA0000";
+    document.body.style.backgroundImage = "url(" + bg + ")";
   }
 
   render() {

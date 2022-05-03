@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import PlanetEL from "./PlanetEL";
 import NoPlanetEL from "./NoPlanetEL";
+import bg from "..\\..\\pic\\Galaxy.jpg";
+import pic from "..\\..\\pic\\planet-earth.png";
+import chat from "..\\..\\pic\\chat.png";
 
 export default class PlanetHistoryPage extends Component {
   state = {
@@ -16,7 +19,8 @@ export default class PlanetHistoryPage extends Component {
     console.log(memberInfo);
     memberInfo = this.resize(memberInfo, 12);
     this.setState({ memberInfo: memberInfo });
-    document.body.style.backgroundColor = "#AA0000";
+    document.body.style.backgroundImage = "url(" + bg + ")";
+
     document
       .getElementById("staticBackdrop")
       .addEventListener("show.bs.modal", function (event) {
@@ -64,11 +68,33 @@ export default class PlanetHistoryPage extends Component {
                 ></button>
               </div>
               <div className="modal-body d-flex justify-content-between">
-                <a id="toPlanet" href="">
+                <a
+                  className="btn bg-info bg-opacity-25 border-primary"
+                  id="toPlanet"
+                  href=""
+                >
+                  <img
+                    className="m-auto"
+                    alt="NOPlanet"
+                    src={pic}
+                    width="100"
+                    heigh="50"
+                  ></img>
                   <div>星球</div>
                 </a>
 
-                <a id="toMsg" href="">
+                <a
+                  className="btn bg-info bg-opacity-25 border-primary"
+                  id="toMsg"
+                  href=""
+                >
+                  <img
+                    className="m-auto"
+                    alt="NOPlanet"
+                    src={chat}
+                    width="100"
+                    heigh="50"
+                  ></img>
                   <div>留言</div>
                 </a>
               </div>
